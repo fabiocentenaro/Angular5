@@ -1,0 +1,21 @@
+<div class="container color-dark" >
+  <div class="col">
+    <p>Add a bucket List ({{itemCount}})</p>
+  </div>
+  <div class="col">
+      <p>Add a bucket List </p>
+    </div>
+  </div>  
+  
+
+  <div class="container color-light" [@items] = "items.length" >
+      <div class="col">
+        <p *ngFor="let item of items; let i = index" (click)="removeItem(i)">
+          {{item}}
+        </p>
+      </div>
+   
+  </div>  
+      
+  <input type="text" [(ngModel)]="buttontext">
+  <input type="button" (click)="addItem()" value="Add item">
